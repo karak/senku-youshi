@@ -24,7 +24,7 @@ describe('<senku-app />', () => {
   it('normalizes the value on <senku-editor> changes its value', () => {
     const editor = wrapper.instance().refs.editor;
 
-    editor.trigger('change', { value: 'Hello'});
+    editor.trigger('change', { value: 'Hello' });
 
     expect(editor.value).toBe('Hello' + '!');
   });

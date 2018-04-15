@@ -3,18 +3,19 @@ import './controlled-textarea.tag';
 import { simulate } from 'simulate-event';
 
 describe('<controlled-textarea />', () => {
-
-  describeWithTag('refs', (getWrapper) => {
+  describeWithTag('refs', getWrapper => {
     it('has textarea in refs', () => {
       const wrapper = getWrapper();
       expect(wrapper.instance().refs).toHaveProperty('textarea');
-      expect(wrapper.instance().refs.textarea).toBeInstanceOf(HTMLTextAreaElement);
+      expect(wrapper.instance().refs.textarea).toBeInstanceOf(
+        HTMLTextAreaElement
+      );
     });
   });
 
   describe('opts.defaultValue', () => {
     let wrapper = null;
-    
+
     afterEach(() => {
       if (wrapper) {
         wrapper.unmount();
@@ -35,7 +36,7 @@ describe('<controlled-textarea />', () => {
     });
   });
 
-  describeWithTag('value accessor', (getWrapper) => {
+  describeWithTag('value accessor', getWrapper => {
     it('assigns the set value to value of textarea', () => {
       const wrapper = getWrapper();
       wrapper.instance().value = 'Changed';
@@ -50,7 +51,7 @@ describe('<controlled-textarea />', () => {
     });
   });
 
-  describeWithTag('event "change"', (getWrapper) => {
+  describeWithTag('event "change"', getWrapper => {
     let fn;
     beforeEach(() => {
       fn = jest.fn();
@@ -71,18 +72,18 @@ describe('<controlled-textarea />', () => {
 
       expect(fn).toHaveBeenCalledWith({ value: 'Changed' });
     });
-  })
+  });
 });
 
 function describeWithTag(suite, opts, callback) {
   if (arguments.length < 3) {
     callback = opts;
-    opts = {}
+    opts = {};
   }
 
   describe(suite, () => {
     let wrapper = null;
-    
+
     beforeEach(() => {
       wrapper = shallow('controlled-textarea', opts);
     });
