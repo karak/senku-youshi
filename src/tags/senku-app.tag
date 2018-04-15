@@ -4,17 +4,18 @@
   <script>
   import './controlled-textarea.tag';
   import './command-bar.tag';
-  import normalizeList from '../models/normalizeList';
-  import shuffle from '../models/shuffle';
+  import { WorkList } from '../models';
 
   this.editorValue = '';
   this.on('mount', () => {
+    const workList = new WorkList(this.refs.editor);
+
     this.refs.editor.on('change', ({ value }) => {
-      this.refs.editor.value = normalizeList(value);
+      workList.normalize();
     });
 
     this.refs.commandBar.on('shuffle', () => {
-      this.refs.editor.value = shuffle(this.refs.editor.value);
+      workList.shuffle();
     });
   });
   </script>
