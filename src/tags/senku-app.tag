@@ -7,18 +7,19 @@
   import { WorkList, clipboard } from '../models';
 
   this.on('mount', () => {
-    const workList = new WorkList(this.refs.editor);
+    const { commandBar, editor} = this.refs;
+    const workList = new WorkList(editor);
 
-    this.refs.editor.on('change', ({ value }) => {
+    editor.on('change', ({ value }) => {
       workList.normalize();
     });
 
-    this.refs.commandBar.on('shuffle', () => {
+    commandBar.on('shuffle', () => {
       workList.shuffle();
     });
 
-    this.refs.commandBar.on('copy', () => {
-      clipboard.paste(this.refs.editor.value);
+    commandBar.on('copy', () => {
+      clipboard.paste(editor.value);
     });
   });
   </script>
