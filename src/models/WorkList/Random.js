@@ -20,6 +20,7 @@ function firstOflastEmptyElements(xs) {
       return i;
     }
   }
+  return xs.length;
 }
 
 /** Random algorithm */
