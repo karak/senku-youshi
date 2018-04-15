@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "lodash": "^4.17.5",
     "riot": "^3.9.1",
     "riot-jest-transformer": "^1.0.10"
   },
