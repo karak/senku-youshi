@@ -1,5 +1,6 @@
 import { shallow } from 'riot-test-utils';
 import './controlled-textarea.tag';
+import { simulate } from 'simulate-event';
 
 describe('<controlled-textarea />', () => {
 
@@ -50,8 +51,26 @@ describe('<controlled-textarea />', () => {
   });
 
   describeWithTag('event "change"', (getWrapper) => {
-    // todo: dispatch event
-    it('is triggered by "input" of textarea');
+    let fn;
+    beforeEach(() => {
+      fn = jest.fn();
+    });
+
+    afterEach(() => {
+      fn = null;
+    });
+
+    it('is triggered by "input" of textarea', () => {
+      const wrapper = getWrapper();
+
+      wrapper.instance().on('change', fn);
+
+      const { textarea } = wrapper.instance().refs;
+      textarea.value = 'Changed';
+      simulate(textarea, 'input');
+
+      expect(fn).toHaveBeenCalledWith({ value: 'Changed' });
+    });
   })
 });
 
