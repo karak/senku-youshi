@@ -5,6 +5,9 @@ import './senku-app.tag';
 jest.mock('../models/normalizeList');
 import normalizeList from '../models/normalizeList';
 normalizeList.mockImplementation(x => x + '!'); // append "!"
+jest.mock('../models/shuffle');
+import shuffle from '../models/shuffle';
+shuffle.mockImplementation(x => 'shuffled');
 
 describe('<senku-app />', () => {
   let wrapper;
@@ -27,5 +30,21 @@ describe('<senku-app />', () => {
     editor.trigger('change', { value: 'Hello' });
 
     expect(editor.value).toBe('Hello' + '!');
+  });
+
+  it('has "commandBar" in refs', () => {
+    expect(wrapper.instance().refs).toHaveProperty('commandBar');
+  });
+
+  it('shuffles the value on <command-bar> fires "shuffle" event', () => {
+    const editor = wrapper.instance().refs.editor;
+    const commandBar = wrapper.instance().refs.commandBar;
+
+    editor.value = 'unshuffled';
+
+    commandBar.trigger('shuffle');
+
+    expect(shuffle).toBeCalledWith('unshuffled');
+    expect(editor.value).toBe('shuffled');
   });
 });

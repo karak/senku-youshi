@@ -1,0 +1,2 @@
+<command-bar>
+</command-bar>
