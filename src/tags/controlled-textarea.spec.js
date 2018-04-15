@@ -75,7 +75,6 @@ describe('<controlled-textarea />', () => {
     });
   });
 
-
   it('matches snapshot', () => {
     const wrapper = shallow('controlled-textarea');
     try {

@@ -4,4 +4,3 @@ import './tags/senku-app.tag';
 import './index.scss';
 
 riot.mount('senku-app');
-  

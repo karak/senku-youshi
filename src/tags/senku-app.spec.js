@@ -27,7 +27,7 @@ jest.mock('../models', () => {
   const mockClipboard = {
     paste(text) {
       throw 'Clipboard is: ' + text;
-    }
+    },
   };
 
   return {
