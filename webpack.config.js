@@ -21,6 +21,10 @@ module.exports = {
         exclude: /node_modules/,
         use: 'riot-tag-loader',
       },
+      {
+        test: /\.(sass|scss|css)$/,
+        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 }}, 'postcss-loader', 'sass-loader'],
+      }
     ],
   },
   plugins: [
