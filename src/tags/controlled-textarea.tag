@@ -2,18 +2,10 @@
   <textarea class="textarea" ref="textarea" onInput={input} value={ opts.defaultValue || '' } rows="20" 
             placeholder="句を改行区切りで貼り付けてください。"/>
   <script>
+  import defineTextareaProperty from './helpers/defineTextareaProperty';
 
-  /* define "value" accessor connecting with textarea */
-  Object.defineProperty(this, 'value', {
-    enumerable: true,
-    configurable: true,
-    set: function (value) {
-      this.refs.textarea.value = value;
-    },
-    get: function () {
-      return this.refs.textarea.value;
-    }
-  });
+  /** define this.value connecting with textarea.value */
+  defineTextareaProperty(this, 'value', this.refs.textrea);
 
   /** "oninput" event handler of textarea */
   input(e) {
