@@ -1,10 +1,6 @@
 <controlled-textarea>
-  <textarea ref="textarea" onInput={input} value={ value } rows="8"/>
-  <style scoped>
-  controlled-textarea textarea {
-    width: 100%;
-  }
-  </style>
+  <textarea class="textarea" ref="textarea" onInput={input} value={ value } rows="20" 
+            placeholder="句を改行区切りで貼り付けてください。"/>
   <script>
 
   /* define "value" accessor connecting with textarea */
