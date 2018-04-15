@@ -4,5 +4,5 @@ module.exports = {
     '^.+\\.tag$': 'riot-jest-transformer',
   },
   collectCoverageFrom: ['src/**'],
-  coveragePathIgnorePatterns: ['/node_modules/', '\.snap$']
+  coveragePathIgnorePatterns: ['/node_modules/', '\\.snap$'],
 };
