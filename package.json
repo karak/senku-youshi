@@ -33,6 +33,7 @@
   "scripts": {
     "clean": "rm -rf public",
     "build": "npm run lint && npm run clean && webpack --config=\"./webpack.config.js\"",
+    "test": "jest",
     "lint": "prettier '**/*.js' -l",
     "lint:fix": "prettier '**/*.js' --write",
     "start": "webpack-dev-server --config=\"./webpack.config.js\" --mode=development",
