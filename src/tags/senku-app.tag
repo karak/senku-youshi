@@ -19,7 +19,7 @@
     });
 
     commandBar.on('copy', () => {
-      clipboard.paste(editor.value);
+      clipboard.copy(editor.value);
     });
   });
   </script>

@@ -1,5 +1,5 @@
-import copy from 'copy-to-clipboard';
+import copyToClipboard from 'copy-to-clipboard';
 
-export function paste(text) {
-  copy(text);
+export function copy(text) {
+  copyToClipboard(text);
 }
