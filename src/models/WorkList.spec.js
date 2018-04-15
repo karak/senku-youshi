@@ -67,6 +67,6 @@ describe('WorkList', () => {
 
     it('complete shuffle at initial state', () => {
       expect(() => workList.shuffle()).not.toThrow();
-    })
+    });
   });
 });
