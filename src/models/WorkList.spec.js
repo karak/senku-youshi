@@ -64,5 +64,9 @@ describe('WorkList', () => {
 
       expect(text).toEqual(['a', 'd', 'b', 'c', ''].join('\n'));
     });
+
+    it('complete shuffle at initial state', () => {
+      expect(() => workList.shuffle()).not.toThrow();
+    })
   });
 });
