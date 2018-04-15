@@ -21,6 +21,12 @@ describe('WorkList', () => {
       expect(text).toBe('a\nb c');
     });
   
+    it('trim full-width whitespaces', () => {
+      text = '　abc　　';
+      workList.normalize();
+      expect(text).toBe('abc');
+    });
+
     it('trim empty line', () => {
       text = 'a\n   \nb\nc';
       workList.normalize();
