@@ -83,4 +83,8 @@ describe('<senku-app />', () => {
 
     expect(() => commandBar.trigger('copy')).toThrow('Clipboard is: copied!');
   });
+
+  it('matches snapshot', () => {
+    expect(wrapper.toJSON()).toMatchSnapshot();
+  });
 });

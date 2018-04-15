@@ -1,6 +1,7 @@
 import { shallow } from 'riot-test-utils';
 import './controlled-textarea.tag';
 import { simulate } from 'simulate-event';
+import { wrap } from 'module';
 
 describe('<controlled-textarea />', () => {
   describeWithTag('refs', getWrapper => {
@@ -72,6 +73,16 @@ describe('<controlled-textarea />', () => {
 
       expect(fn).toHaveBeenCalledWith({ value: 'Changed' });
     });
+  });
+
+
+  it('matches snapshot', () => {
+    const wrapper = shallow('controlled-textarea');
+    try {
+      expect(wrapper.toJSON()).toMatchSnapshot();
+    } finally {
+      wrapper.unmount();
+    }
   });
 });
 

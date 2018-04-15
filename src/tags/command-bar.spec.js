@@ -49,4 +49,8 @@ describe('<command-bar />', () => {
 
     expect(handler).toHaveBeenCalled();
   });
+
+  it('matches snapshot', () => {
+    expect(wrapper.toJSON()).toMatchSnapshot();
+  });
 });
