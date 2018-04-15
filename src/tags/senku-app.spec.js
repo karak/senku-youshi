@@ -5,25 +5,27 @@ import './senku-app.tag';
 jest.mock('../models', () => {
   // append "!"
   function appendExclamartionMark(x) {
-    return typeof x === 'string' && x.length > 0 && x[x.length - 1] !== '!' ? x + '!' : x;
+    return typeof x === 'string' && x.length > 0 && x[x.length - 1] !== '!'
+      ? x + '!'
+      : x;
   }
 
   class MockWorkList {
     constructor(storage) {
       this._storage = storage;
     }
-  
+
     normalize() {
       this._storage.value = appendExclamartionMark(this._storage.value);
     }
-  
+
     shuffle() {
       this._storage.value = 'shuffled';
     }
   }
 
   return {
-    WorkList: MockWorkList
+    WorkList: MockWorkList,
   };
 });
 

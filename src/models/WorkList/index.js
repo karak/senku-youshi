@@ -5,7 +5,7 @@ import normalizeList from './normalizeList';
 export default class WorkList {
   /**
    * constructor
-   * @param {object} storage 
+   * @param {object} storage
    * @param {string} storage.value
    */
   constructor(storage) {
@@ -30,4 +30,3 @@ export default class WorkList {
     this._storage.value = normalizeList(this._storage.value);
   }
 }
-
