@@ -6,7 +6,6 @@
   import './command-bar.tag';
   import { WorkList, clipboard } from '../models';
 
-  this.editorValue = '';
   this.on('mount', () => {
     const workList = new WorkList(this.refs.editor);
 
