@@ -46,6 +46,6 @@
     "lint": "prettier '**/*.js' -l",
     "lint:fix": "prettier '**/*.js' --write",
     "start": "webpack-dev-server --config=\"./webpack.config.js\" --mode=development",
-    "prepublishOnly": "npm run build"
+    "build-page": "npm run build && cp public/* ."
   }
 }
