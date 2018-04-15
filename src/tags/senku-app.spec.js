@@ -24,8 +24,15 @@ jest.mock('../models', () => {
     }
   }
 
+  const mockClipboard = {
+    paste(text) {
+      throw 'Clipboard is: ' + text;
+    }
+  };
+
   return {
     WorkList: MockWorkList,
+    clipboard: mockClipboard,
   };
 });
 
@@ -66,5 +73,14 @@ describe('<senku-app />', () => {
     commandBar.trigger('shuffle');
 
     expect(editor.value).toBe('shuffled');
+  });
+
+  it('paste to the clipboard on <command-bar> fires "copy" event', () => {
+    const editor = wrapper.instance().refs.editor;
+    const commandBar = wrapper.instance().refs.commandBar;
+
+    editor.value = 'copied!';
+
+    expect(() => commandBar.trigger('copy')).toThrow('Clipboard is: copied!');
   });
 });

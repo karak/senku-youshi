@@ -33,4 +33,20 @@ describe('<command-bar />', () => {
 
     expect(handler).toHaveBeenCalled();
   });
+
+  it('has "copyButton" in its refs', () => {
+    expect(wrapper.instance().refs).toHaveProperty('copyButton');
+  });
+
+  it('fires "copy" event when button is clicked', () => {
+    const handler = jest.fn();
+
+    const copyButton = wrapper.instance().refs.copyButton;
+
+    wrapper.instance().on('copy', handler);
+
+    simulate(copyButton, 'click');
+
+    expect(handler).toHaveBeenCalled();
+  });
 });

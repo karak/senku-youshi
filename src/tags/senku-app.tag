@@ -4,7 +4,7 @@
   <script>
   import './controlled-textarea.tag';
   import './command-bar.tag';
-  import { WorkList } from '../models';
+  import { WorkList, clipboard } from '../models';
 
   this.editorValue = '';
   this.on('mount', () => {
@@ -16,6 +16,10 @@
 
     this.refs.commandBar.on('shuffle', () => {
       workList.shuffle();
+    });
+
+    this.refs.commandBar.on('copy', () => {
+      clipboard.paste(this.refs.editor.value);
     });
   });
   </script>
