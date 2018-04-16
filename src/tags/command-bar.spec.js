@@ -1,6 +1,5 @@
 import './command-bar.tag';
-import { shallow } from 'riot-test-utils';
-import { simulate } from 'simulate-event';
+import { shallow, Simulate } from 'riot-test-utils';
 
 describe('<command-bar />', () => {
   let wrapper;
@@ -13,11 +12,11 @@ describe('<command-bar />', () => {
   });
 
   it('has "shuffleButton" in its refs', () => {
-    expect(wrapper.instance().refs).toHaveProperty('shuffleButton');
+    expect(wrapper.refs).toHaveProperty('shuffleButton');
   });
 
   it('shuffleButton has a certain label', () => {
-    const shuffleButton = wrapper.instance().refs.shuffleButton;
+    const shuffleButton = wrapper.refs.shuffleButton;
 
     expect(shuffleButton.textContent).toBe('並べ替え');
   });
@@ -25,27 +24,27 @@ describe('<command-bar />', () => {
   it('fires "shuffle" event when button is clicked', () => {
     const handler = jest.fn();
 
-    const shuffleButton = wrapper.instance().refs.shuffleButton;
+    const shuffleButton = wrapper.refs.shuffleButton;
 
-    wrapper.instance().on('shuffle', handler);
+    wrapper.on('shuffle', handler);
 
-    simulate(shuffleButton, 'click');
+    Simulate.click(shuffleButton);
 
     expect(handler).toHaveBeenCalled();
   });
 
   it('has "copyButton" in its refs', () => {
-    expect(wrapper.instance().refs).toHaveProperty('copyButton');
+    expect(wrapper.refs).toHaveProperty('copyButton');
   });
 
   it('fires "copy" event when button is clicked', () => {
     const handler = jest.fn();
 
-    const copyButton = wrapper.instance().refs.copyButton;
+    const copyButton = wrapper.refs.copyButton;
 
-    wrapper.instance().on('copy', handler);
+    wrapper.on('copy', handler);
 
-    simulate(copyButton, 'click');
+    Simulate.click(copyButton);
 
     expect(handler).toHaveBeenCalled();
   });

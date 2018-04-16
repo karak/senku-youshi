@@ -6007,12 +6007,13 @@ riot-tag-loader@^2.0.2:
   dependencies:
     loader-utils "^1.1.0"
 
-riot-test-utils@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/riot-test-utils/-/riot-test-utils-0.2.1.tgz#125ca926cabc9598df9423d6ada749cf4148f1f3"
+riot-test-utils@^1.0.0-0:
+  version "1.0.0-0"
+  resolved "https://registry.yarnpkg.com/riot-test-utils/-/riot-test-utils-1.0.0-0.tgz#1a4fd896061b44e2a99fdfd8e91740a20dbd9560"
   dependencies:
     lodash "^4.17.5"
     riot-shallowize "^0.1.4"
+    simulate-event "^1.4.0"
 
 riot-tmpl@^3.0.8:
   version "3.0.8"

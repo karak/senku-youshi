@@ -48,11 +48,11 @@ describe('<senku-app />', () => {
   });
 
   it('has "editor" in refs', () => {
-    expect(wrapper.instance().refs).toHaveProperty('editor');
+    expect(wrapper.refs).toHaveProperty('editor');
   });
 
   it('normalizes the value on <senku-editor> changes its value', () => {
-    const editor = wrapper.instance().refs.editor;
+    const editor = wrapper.refs.editor;
 
     editor.value = 'Hello';
     editor.trigger('change', { value: 'Hello' });
@@ -61,12 +61,12 @@ describe('<senku-app />', () => {
   });
 
   it('has "commandBar" in refs', () => {
-    expect(wrapper.instance().refs).toHaveProperty('commandBar');
+    expect(wrapper.refs).toHaveProperty('commandBar');
   });
 
   it('shuffles the value on <command-bar> fires "shuffle" event', () => {
-    const editor = wrapper.instance().refs.editor;
-    const commandBar = wrapper.instance().refs.commandBar;
+    const editor = wrapper.refs.editor;
+    const commandBar = wrapper.refs.commandBar;
 
     editor.value = 'unshuffled';
 
@@ -76,8 +76,8 @@ describe('<senku-app />', () => {
   });
 
   it('paste to the clipboard on <command-bar> fires "copy" event', () => {
-    const editor = wrapper.instance().refs.editor;
-    const commandBar = wrapper.instance().refs.commandBar;
+    const editor = wrapper.refs.editor;
+    const commandBar = wrapper.refs.commandBar;
 
     editor.value = 'copied!';
 

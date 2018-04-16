@@ -1,14 +1,13 @@
-import { shallow } from 'riot-test-utils';
+import { shallow, Simulate } from 'riot-test-utils';
 import './controlled-textarea.tag';
-import { simulate } from 'simulate-event';
 import { wrap } from 'module';
 
 describe('<controlled-textarea />', () => {
   describeWithTag('refs', getWrapper => {
     it('has textarea in refs', () => {
       const wrapper = getWrapper();
-      expect(wrapper.instance().refs).toHaveProperty('textarea');
-      expect(wrapper.instance().refs.textarea).toBeInstanceOf(
+      expect(wrapper.refs).toHaveProperty('textarea');
+      expect(wrapper.refs.textarea).toBeInstanceOf(
         HTMLTextAreaElement
       );
     });
@@ -26,29 +25,29 @@ describe('<controlled-textarea />', () => {
     it('value is empty by default', () => {
       wrapper = shallow('controlled-textarea');
 
-      expect(wrapper.instance().value).toBe('');
+      expect(wrapper.instance.value).toBe('');
     });
 
     it('value is assigned from the option', () => {
       const opts = { defaultValue: 'Once upon a time...' };
       wrapper = shallow('controlled-textarea', opts);
 
-      expect(wrapper.instance().value).toBe(opts.defaultValue);
+      expect(wrapper.instance.value).toBe(opts.defaultValue);
     });
   });
 
   describeWithTag('value accessor', getWrapper => {
     it('assigns the set value to value of textarea', () => {
       const wrapper = getWrapper();
-      wrapper.instance().value = 'Changed';
-      expect(wrapper.instance().value).toBe('Changed');
-      expect(wrapper.instance().refs.textarea.value).toBe('Changed');
+      wrapper.instance.value = 'Changed';
+      expect(wrapper.instance.value).toBe('Changed');
+      expect(wrapper.instance.refs.textarea.value).toBe('Changed');
     });
 
     it('get value of textarea', () => {
       const wrapper = getWrapper();
-      wrapper.instance().refs.textarea.value = 'Changed';
-      expect(wrapper.instance().value).toBe('Changed');
+      wrapper.refs.textarea.value = 'Changed';
+      expect(wrapper.instance.value).toBe('Changed');
     });
   });
 
@@ -65,11 +64,11 @@ describe('<controlled-textarea />', () => {
     it('is triggered by "input" of textarea', () => {
       const wrapper = getWrapper();
 
-      wrapper.instance().on('change', fn);
+      wrapper.on('change', fn);
 
-      const { textarea } = wrapper.instance().refs;
+      const { textarea } = wrapper.refs;
       textarea.value = 'Changed';
-      simulate(textarea, 'input');
+      Simulate.input(textarea);
 
       expect(fn).toHaveBeenCalledWith({ value: 'Changed' });
     });
