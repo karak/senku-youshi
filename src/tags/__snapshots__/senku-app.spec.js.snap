@@ -1,33 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<senku-app /> matches snapshot 1`] = `
-Object {
-  "attributes": Object {
-    "data-is": Array [
+<senku-app
+  data-is={
+    Array [
       "senku-app",
-    ],
-  },
-  "children": Array [
-    Object {
-      "attributes": Object {
-        "ref": Array [
-          "commandBar",
-        ],
-      },
-      "children": Array [],
-      "name": "command-bar",
-    },
-    " ",
-    Object {
-      "attributes": Object {
-        "ref": Array [
-          "editor",
-        ],
-      },
-      "children": Array [],
-      "name": "controlled-textarea",
-    },
-  ],
-  "name": "senku-app",
-}
+    ]
+  }
+>
+  <command-bar
+    ref={
+      Array [
+        "commandBar",
+      ]
+    }
+  />
+   
+  <controlled-textarea
+    ref={
+      Array [
+        "editor",
+      ]
+    }
+  />
+</senku-app>
 `;
