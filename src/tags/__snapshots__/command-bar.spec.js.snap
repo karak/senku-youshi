@@ -1,109 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<command-bar /> matches snapshot 1`] = `
-Object {
-  "attributes": Object {
-    "data-is": Array [
+<command-bar
+  data-is={
+    Array [
       "command-bar",
-    ],
-  },
-  "children": Array [
-    Object {
-      "attributes": Object {
-        "aria-label": Array [
-          "main navigation",
-        ],
-        "class": Array [
-          "navbar",
-        ],
-        "role": Array [
-          "navigation",
-        ],
-      },
-      "children": Array [
-        " ",
-        Object {
-          "attributes": Object {
-            "class": Array [
-              "navbar-brand",
-            ],
-          },
-          "children": Array [
-            " ",
-            Object {
-              "attributes": Object {
-                "class": Array [
-                  "navbar-item",
-                ],
-              },
-              "children": Array [
-                " ",
-                Object {
-                  "attributes": Object {
-                    "class": Array [
-                      "button is-outlined",
-                    ],
-                    "ref": Array [
-                      "shuffleButton",
-                    ],
-                  },
-                  "children": Array [
-                    "並べ替え",
-                  ],
-                  "name": "button",
-                },
-                " ",
-              ],
-              "name": "div",
-            },
-            " ",
-            Object {
-              "attributes": Object {
-                "class": Array [
-                  "navbar-item",
-                ],
-              },
-              "children": Array [
-                " ",
-                Object {
-                  "attributes": Object {
-                    "class": Array [
-                      "button is-primary",
-                    ],
-                    "ref": Array [
-                      "copyButton",
-                    ],
-                  },
-                  "children": Array [
-                    "クリップボードにコピー",
-                  ],
-                  "name": "button",
-                },
-                " ",
-              ],
-              "name": "div",
-            },
-            " ",
-          ],
-          "name": "div",
-        },
-        " ",
-        Object {
-          "attributes": Object {
-            "class": Array [
-              "navbar-menu",
-            ],
-          },
-          "children": Array [
-            " ",
-          ],
-          "name": "div",
-        },
-        " ",
-      ],
-      "name": "nav",
-    },
-  ],
-  "name": "command-bar",
-}
+    ]
+  }
+>
+  <nav
+    aria-label={
+      Array [
+        "main navigation",
+      ]
+    }
+    class={
+      Array [
+        "navbar",
+      ]
+    }
+    role={
+      Array [
+        "navigation",
+      ]
+    }
+  >
+     
+    <div
+      class={
+        Array [
+          "navbar-brand",
+        ]
+      }
+    >
+       
+      <div
+        class={
+          Array [
+            "navbar-item",
+          ]
+        }
+      >
+         
+        <button
+          class={
+            Array [
+              "button is-outlined",
+            ]
+          }
+          ref={
+            Array [
+              "shuffleButton",
+            ]
+          }
+        >
+          並べ替え
+        </button>
+         
+      </div>
+       
+      <div
+        class={
+          Array [
+            "navbar-item",
+          ]
+        }
+      >
+         
+        <button
+          class={
+            Array [
+              "button is-primary",
+            ]
+          }
+          ref={
+            Array [
+              "copyButton",
+            ]
+          }
+        >
+          クリップボードにコピー
+        </button>
+         
+      </div>
+       
+    </div>
+     
+    <div
+      class={
+        Array [
+          "navbar-menu",
+        ]
+      }
+    >
+       
+    </div>
+     
+  </nav>
+</command-bar>
 `;

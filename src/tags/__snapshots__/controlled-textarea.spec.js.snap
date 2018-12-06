@@ -1,32 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<controlled-textarea /> matches snapshot 1`] = `
-Object {
-  "attributes": Object {
-    "data-is": Array [
+<controlled-textarea
+  data-is={
+    Array [
       "controlled-textarea",
-    ],
-  },
-  "children": Array [
-    Object {
-      "attributes": Object {
-        "class": Array [
-          "textarea",
-        ],
-        "placeholder": Array [
-          "句を改行区切りで貼り付けてください。",
-        ],
-        "ref": Array [
-          "textarea",
-        ],
-        "rows": Array [
-          "20",
-        ],
-      },
-      "children": Array [],
-      "name": "textarea",
-    },
-  ],
-  "name": "controlled-textarea",
-}
+    ]
+  }
+>
+  <textarea
+    class={
+      Array [
+        "textarea",
+      ]
+    }
+    placeholder={
+      Array [
+        "句を改行区切りで貼り付けてください。",
+      ]
+    }
+    ref={
+      Array [
+        "textarea",
+      ]
+    }
+    rows={
+      Array [
+        "20",
+      ]
+    }
+  />
+</controlled-textarea>
 `;
